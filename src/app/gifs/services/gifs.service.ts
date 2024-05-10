@@ -26,7 +26,6 @@ export class GifsService {
   searchTag(tag: string): void{
     if(tag != ''){
       this._organizedHistory(tag);
-      console.log(this._tagsHistory)
     }
     // fetch('https://api.giphy.com/v1/gifs/search?api_key=HyoNYqPU2z3ntwPKCHGyog9HTyi06O3I&q=shitzu&limit=10')
     // .then(res => res.json())
@@ -40,7 +39,6 @@ export class GifsService {
     const response = this.http.get<SearchResponse>(`${this.url}/search`, {params});
     response.subscribe( res => {
       this.gifList = res.data;
-      console.log(this.gifList);
     });
 
   }
